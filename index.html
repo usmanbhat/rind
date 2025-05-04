@@ -49,6 +49,20 @@
             <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
+          <div class="social-links ms-3 d-none d-lg-flex">
+            <a href="https://x.com/RazinUsama98002" target="_blank" class="me-2">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.facebook.com/people/Rind-%D8%B1%D9%86%D8%AF/61554753494042/" target="_blank" class="me-2">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/usamarazin0/" target="_blank" class="me-2">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://wa.me/+201080404682" target="_blank">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+          </div>
           <div class="theme-toggle ms-3">
             <button onclick="toggleTheme()" class="btn btn-link" aria-label="Toggle theme">
               <i class="bi bi-moon-stars"></i>
@@ -166,7 +180,7 @@
         <!-- Tour Card 5 -->
         <div class="col-lg-4 col-md-6" data-aos="fade-up">
           <div class="tour-card shadow-sm rounded h-100">
-            <img src="assets/img/tours/museum.jpg" alt="Museum Tour" class="img-fluid rounded-top" style="height:200px;width:100%;object-fit:cover;">
+            <img src="assets/img/locations/museum.jpg" alt="Museum Tour" class="img-fluid rounded-top" style="height:200px;width:100%;object-fit:cover;">
             <div class="p-4">
               <h4>Egyptian Museum Tour</h4>
               <p>Explore the world's largest collection of Pharaonic antiquities</p>
@@ -375,11 +389,11 @@
             <p>Ready to explore Cairo? Get in touch and let's create your perfect itinerary.</p>
             <div class="info-item">
               <i class="bi bi-whatsapp"></i>
-              <span>+20 123 456 789</span>
+              <span>+20 1080404682</span>
             </div>
             <div class="info-item">
               <i class="bi bi-envelope"></i>
-              <span>guide@rind-cairo.com</span>
+              <span>usamarazin0@gmail.com</span>
             </div>
           </div>
         </div>
@@ -387,7 +401,7 @@
           <form class="contact-form" data-aos="fade-left">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="name" placeholder="Your Name">
-              <label for="name">Your Name</label>
+              <label for="name">Your Name:</label>
             </div>
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="email" placeholder="Your Email">
@@ -405,17 +419,46 @@
   </section>
 
   <!-- Footer -->
-  <footer id="footer" class="footer">
-    <div class="container text-center">
-      <p>© 2025 Rind. All Rights Reserved.</p>
+  <footer class="footer py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <h3 class="mb-0">Rind • رند</h3>
+        <p class="text-muted mb-0">Your Personal Guide to Cairo</p>
+      </div>
+      <div class="col-md-6">
+        <div class="social-links d-flex justify-content-center justify-content-md-end">
+          <a href="https://x.com/RazinUsama98002" target="_blank" class="mx-2" title="Twitter">
+            <i class="bi bi-twitter-x fs-5"></i>
+          </a>
+          <a href="https://www.facebook.com/people/Rind-%D8%B1%D9%86%D8%AF/61554753494042/" target="_blank" class="mx-2" title="Facebook">
+            <i class="bi bi-facebook fs-5"></i>
+          </a>
+          <a href="https://www.instagram.com/usamarazin0/" target="_blank" class="mx-2" title="Instagram">
+            <i class="bi bi-instagram fs-5"></i>
+          </a>
+          <a href="https://wa.me/+201080404682" target="_blank" class="mx-2" title="WhatsApp">
+            <i class="bi bi-whatsapp fs-5"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Add before other scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+        emailjs.init("-_LGz5FvituD96Oy6"); // Add your EmailJS public key here
+    })();
+  </script>
+  <script src="assets/js/contact.js"></script>
   <!-- Data and Custom JS -->
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>

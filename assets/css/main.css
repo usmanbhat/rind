@@ -91,11 +91,11 @@
 :root {
   --primary: #2A9D8F;
   --secondary: #E9C46A;
-  --background: #fff;
+  --background: #ffffff;
   --surface: #f8f9fa;
-  --text: #222;
-  --text-light: #666;
-  --border: #e0e0e0;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --border: #dfe6e9;
   --shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
 
@@ -106,7 +106,7 @@
   --surface: #232526;
   --text: #f1f1f1;
   --text-light: #b2bec3;
-  --border: #333;
+  --border: #2d3436;
   --shadow: 0 4px 24px rgba(0,0,0,0.25);
 }
 
@@ -162,18 +162,6 @@ h6 {
 
 /* Base Styles */
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body {
   background: var(--background);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
@@ -185,11 +173,17 @@ p {
 
 /* Card Styles */
 .tour-card, .location-card {
-  background-color: var(--surface-color);
-  box-shadow: var(--shadow);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease;
+}
+
+.tour-card:hover, .location-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
 }
 
 .tour-card, .location-card, .service-card, .pricing-card {
@@ -197,6 +191,65 @@ p {
   color: var(--text);
   border: 1px solid var(--border);
   transition: background 0.3s, color 0.3s;
+}
+
+/* Update card styles */
+.tour-card, .location-card, .service-card, .pricing-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .tour-card,
+[data-theme="dark"] .location-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .pricing-card {
+    background: var(--surface);
+    color: var(--text);
+}
+
+[data-theme="dark"] .tour-card p,
+[data-theme="dark"] .location-card p,
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .pricing-card p {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .pricing-card h3,
+[data-theme="dark"] .service-card h4 {
+    color: var(--text);
+}
+
+[data-theme="dark"] .text-muted {
+    color: var(--text-light) !important;
+}
+
+/* Fix specific card elements */
+.tour-price,
+.location-price {
+    color: var(--primary) !important;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: var(--surface) !important;
+}
+
+/* Contact form dark mode fixes */
+[data-theme="dark"] .form-control {
+    background-color: var(--surface);
+    border-color: var(--border);
+    color: var(--text);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: var(--surface);
+    border-color: var(--primary);
+    color: var(--text);
+}
+
+[data-theme="dark"] .form-floating > label {
+    color: var(--text-light);
 }
 
 /* Section Styles */
@@ -347,14 +400,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .scrolled .header {
   border-color: color-mix(in srgb, var(--background-color) 90%, white 20%);
-}
-
-.header-modern {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.8);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
 }
 
 .header-modern {
@@ -686,6 +731,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
   font-size: 13px;
   text-align: center;
+}
+
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
 }
 
 /*--------------------------------------------------------------
@@ -1952,6 +2002,21 @@ section,
   transform: translateY(-5px);
 }
 
+.social-links a {
+  color: var(--text);
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .social-links a {
+  color: var(--text);
+}
+
 .testimonial-item {
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
@@ -2021,4 +2086,11 @@ html {
 }
 [data-theme="dark"] .gallery-item {
   background: var(--surface);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .social-links {
+    margin-top: 1rem;
+  }
 }
