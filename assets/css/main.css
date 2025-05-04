@@ -1,16 +1,3 @@
-/**
-* Template Name: PhotoFolio
-* Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Cardo",  sans-serif;
@@ -1201,6 +1188,61 @@ section,
 }
 
 .gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+    background: var(--surface);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-info {
+    color: #fff;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.gallery-info h4 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.gallery-info p {
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-info {
+    transform: translateY(0);
+}
+
+.gallery-item {
   background: var(--surface);
   border-radius: 10px;
   overflow: hidden;
@@ -1264,6 +1306,10 @@ section,
 
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
+}
+
+.gallery-item:hover .gallery-info {
+  transform: translateY(0);
 }
 
 .gallery-overlay {
@@ -1920,6 +1966,48 @@ section,
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
 }
 
+/* Contact Form Styles */
+.contact-form .form-control {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.contact-form .form-floating label {
+    color: var(--text-light);
+}
+
+.contact-form .form-control:focus {
+    background-color: var(--surface);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(42, 157, 143, 0.25);
+    color: var(--text);
+}
+
+.contact-form .form-control:focus ~ label {
+    color: var(--primary);
+}
+
+/* Fix placeholder color */
+.contact-form .form-control::placeholder {
+    color: var(--text-light);
+}
+
+/* Fix floating label color when input has value */
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: var(--text-light);
+}
+
+/* Fix background color when autofilled */
+.contact-form .form-control:-webkit-autofill,
+.contact-form .form-control:-webkit-autofill:hover,
+.contact-form .form-control:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text);
+    -webkit-box-shadow: 0 0 0px 1000px var(--surface) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
@@ -2093,4 +2181,24 @@ html {
   .social-links {
     margin-top: 1rem;
   }
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .navbar-logo {
+    transform: scale(1.1);
+}
+
+/* Adjust size for mobile */
+@media (max-width: 767px) {
+    .navbar-logo {
+        width: 32px;
+        height: 32px;
+    }
 }
